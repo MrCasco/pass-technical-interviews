@@ -12,6 +12,7 @@ Available topics:
   - BFS
   - Dynamic programming
   - Backtracking (DFS)
+  - Permutations
   - Two pointers
   - Arrays
   - Hash tables
