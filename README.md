@@ -6,6 +6,8 @@ Every code within this repo is made on python.
 
 In order to navigate through this repo, you must change the branch to your desired topic.
 
+**Please feel free to send me a pull request in order to add some test cases or comments.**
+
 Available topics:
 
   - DFS
@@ -23,5 +25,3 @@ Available topics:
   - Stacks/queues
   - Sliding window
   - Linked lists
-
-Please feel free to send me a pull request in order to add some test cases or comments.
