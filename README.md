@@ -23,3 +23,5 @@ Available topics:
   - Stacks/queues
   - Sliding window
   - Linked lists
+
+Please feel free to send me a pull request in order to add some test cases or comments.
