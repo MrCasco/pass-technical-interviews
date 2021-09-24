@@ -1,23 +1,28 @@
-def checkInclusion(s1, s2):
-    print(perms(s1))
-    # for perm in perms(s1):
-    #     if perm in s2:
-    #         return True
-    # return False
+from collections import Counter
 
-def perms(s):
-    def dfs(cur, seen):
-        if len(cur) == len(s):
-            res.add(cur)
-            return
-        for j in range(len(s)):
-            if j not in seen:
-                seen.add(j)
-                dfs(cur+s[j], seen.copy())
-                seen.remove(j)
-    res = set()
-    for index in range(len(s)):
-        dfs(s[index], set([index]))
-    return res
 
-checkInclusion("adc","dcda")
+def checkInclusion(s1: str, s2: str) -> bool:
+    set1 = Counter(s1)
+    original_set = Counter(s1)
+    cur = '' 
+    l, r = 0, 0
+    while r < len(s2):
+        if len(cur) == len(s1):
+            return True
+        if s2[r] in set1:
+            cur += s2[r]
+            if set1[s2[r]] - 1  <= 0:
+                del set1[s2[r]]
+            else:
+                set1[s2[r]] -= 1
+        elif s2[r] not in original_set:
+            l = r+1
+            set1 = original_set.copy()
+            cur = ''
+        else:
+            l += 1
+            r = l-1
+            set1 = original_set.copy()
+            cur = ''
+        r += 1
+    return len(cur) == len(s1)
