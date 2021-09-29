@@ -1,5 +1,5 @@
 # check-if-want-to-pass-technical-interviews
- This repo has a collection of leetcode/codesignal/codewars solutions to famous problems frequently asked by FAANG companies, covering the basic topics in technical interviews. 
+ This repo has a collection of leetcode/codesignal/codewars solutions to famous problems that are frequently asked by FAANG companies, covering the basic topics in technical interviews. 
 By studying and doing all these codes I could actually get an Amazon return offer, so I hope I can help you getting that offer too :)
 
 Every code within this repo is made in python.
