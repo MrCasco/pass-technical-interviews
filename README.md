@@ -19,6 +19,7 @@ Available topics:
   - Arrays
   - Hash tables
   - Intervals
+  - Greedy algorithms
   - Binary trees/BST
   - Binary search
   - Heaps
