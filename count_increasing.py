@@ -10,4 +10,17 @@ def count_increasing(arr):
         prev = num
     return count
 
-print(count_increasing(text_reader('count_increasing.txt')))
+def count_increasing_triplets(arr):
+    prev = sum([int(x) for x in arr[:3]])
+    count = 0
+    for i in range(1, len(arr)-2):
+        cur = sum([int(x) for x in arr[i:i+3]])
+        if cur > prev:
+            count += 1
+        prev = cur
+    return count
+
+arr = text_reader('count_triplet_increasing.txt')
+
+# print(count_increasing(arr))
+print(count_increasing_triplets(arr))
