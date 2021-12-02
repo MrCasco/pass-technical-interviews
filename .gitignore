@@ -2,3 +2,4 @@ Lib
 Scripts
 share
 get-pip.py
+__pycache__
