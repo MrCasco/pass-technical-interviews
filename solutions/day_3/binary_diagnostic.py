@@ -30,16 +30,10 @@ def helper(arr, type):
                     ones.append(number)
                 else:
                     zeros.append(number)
-            if type == 'upper':
-                if majority < len(prospects)/2:
-                    prospects = zeros[:]
-                elif majority >= len(prospects)/2 and len(prospects)/2 != 0:
-                    prospects = ones[:]
+            if majority < len(prospects)/2:
+                prospects = zeros[:] if type == 'upper' else ones[:]
             else:
-                if majority < len(prospects)/2:
-                    prospects = ones[:]
-                else:
-                    prospects = zeros[:]
+                prospects = zeros[:] if type == 'lower' else ones[:]
     return int(prospects[0], 2)
 
 def binary_diagnostic_follow_up(arr):
