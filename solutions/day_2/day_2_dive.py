@@ -1,3 +1,7 @@
+import sys
+# insert at 1, 0 is the script path (or '' in REPL)
+sys.path.insert(1, 'C:\Python\check-if-want-to-pass-technical-interviews')
+
 from txt_reader import text_reader
 
 
