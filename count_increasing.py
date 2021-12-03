@@ -20,7 +20,7 @@ def count_increasing_triplets(arr):
         prev = cur
     return count
 
-arr = text_reader('count_triplet_increasing.txt')
+arr = text_reader('day_1/count_triplet_increasing.txt')
 
 # print(count_increasing(arr))
 print(count_increasing_triplets(arr))
