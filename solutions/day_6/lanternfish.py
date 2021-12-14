@@ -11,36 +11,41 @@ def get_children(initial, n):
         return 0
     return 1 + (n//7 if initial == 6 else (n-initial-1)//7)
 
-def get_one_line(initial, days):
+def get_all_descendants(initial, days):
     if (initial, days) in memo:
         return memo[(initial, days)]
     if initial >= days:
         return 1
     children = 0
     for i in range(get_children(initial, days)):
-        children += get_one_line(8, days-((7*i)+initial+1))
+        children += get_all_descendants(8, days-((7*i)+initial+1))
     memo[(initial, days)] = children + 1
     return 1 + children
 
 def lanternfish_simulation(initial, days):
     fishes = 0
     for num in initial:
-        if (num, days) in memo:
-            fishes += memo[(num, days)]
-        else:
-            memo[(num, days)] = get_one_line(num, days)
-            fishes += memo[(num, days)]
+        if (num, days) not in memo:
+            memo[(num, days)] = get_all_descendants(num, days)
+        fishes += memo[(num, days)]
     return fishes
 
+# Tests
 initial_state = [1, 1, 6]
-initial_state = [1]
 initial_state = [3, 4, 3, 1, 2]
+initial_state = [1]
+
 memo = {}
 initial_state = text_reader()
+
+# PART 1
+days = 80
+print(lanternfish_simulation(initial_state, days))
+
+# PART 2
 days = 256
 print(lanternfish_simulation(initial_state, days))
 
-# 390016 > result > 352814
 
 """
 3 4 3 1 2     day 0
